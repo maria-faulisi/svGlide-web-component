@@ -44,5 +44,5 @@ Things to keep in mind:
 
 
 **Enjoy!**
-[svg-glide]:http://iam.colum.edu/students/maria.faulisi/ewt/svGlide/svGlideTest.html
+[svg-glide](http://iam.colum.edu/students/maria.faulisi/ewt/svGlide/svGlideTest.html)
 
