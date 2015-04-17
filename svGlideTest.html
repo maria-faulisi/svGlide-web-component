@@ -1,0 +1,201 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>svGlide Component Samples</title>
+	<link rel="import" href="svGlide.html">
+	<link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	.container{
+		width: 800px;
+		height: auto;
+		margin: 0 auto;
+		margin-top: 10%;
+		margin-bottom: 10%;
+	}
+	.section{
+		min-height: 600px;
+		margin-bottom: 10rem;
+	}
+	.words{
+		color: gray;
+		font-size: 2rem;
+		margin: 0 auto;
+	}
+	sv-glide{
+		float: left;
+	}
+	.h1{
+		font-size: 10rem;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.tacos .h1{
+		font-family: 'Amatic SC', cursive;
+	}
+
+	.wes .h1{
+		font-size: 4rem;
+		font-family: 'Helvetica', sans-serif;
+		font-weight: lighter;
+		text-align: left;
+		padding-bottom: 2rem;
+	}
+
+	.wes sv-glide{
+		margin-bottom: 5rem;
+	}
+
+	.wes sv-glide:last-of-type{
+		margin-top: -200px;
+	}
+
+</style>
+</head>
+<body>
+	<main role = "main" class="container">
+		<section class="section tacos">
+			<h1 class="h1">Taco Tuesday!</h1>
+			<sv-glide
+				data-background = "url(//chicagoist.com/attachments/Samantha%20Abernethy/2013_7_10_pasadita.jpg)"
+				data-link = "//www.pasadita.com/"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#FBB040"
+				data-rightFill = "#D6702B" id="one">
+
+			</sv-glide>
+
+			<sv-glide
+				data-background = "url(//static.squarespace.com/static/540c9aa8e4b03fd146a6e7b9/543032d1e4b07866446ae7e0/54305e4ae4b08b4dd34119be/1412456011281/598747_588335167910258_1829177375_n.jpg?format=500w)"
+				data-link = "//www.antiquetaco.com/"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#FBB040"
+				data-rightFill = "#571A3D">
+				
+			</sv-glide>
+
+
+			<sv-glide
+				data-background = "url(//chicagoist.com/attachments/Samantha%20Abernethy/2013_7_10_rubis.jpg)"
+				data-link = "//www.facebook.com/pages/Rubis-at-the-New-Maxwell-Street-Market/181746865195315"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#571A3D"
+				data-rightFill = "#2EB8AC">
+
+			</sv-glide>
+
+			<sv-glide 
+				data-background = "url(//chicagoist.com/attachments/Samantha%20Abernethy/2013_7_10_erendira.JPG)"
+				data-link ="//www.yelp.com/biz/tacos-erendira-chicago-2"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#2EB8AC"
+				data-rightFill = "#FBB040">
+
+			</sv-glide>
+
+			<sv-glide 
+				data-background = "url(//chicago.seriouseats.com/images/2012/12/20121226-235041-best-chicago-tacos-2012-mixteco-grill-fish-taco.jpg)"
+				data-link ="//www.facebook.com/mixteco.grill"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#FBB040"
+				data-rightFill = "#571A3D">
+
+			</sv-glide>
+
+			<sv-glide 
+				data-background = "url(//chicago.seriouseats.com/images/2013/09/20130910-265977-chicago-tacos-el-perejil-chicken-tinga.jpg)"
+				data-link ="//nearme.seriouseats.com/venue/taqueria-perejil"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#571A3D"
+				data-rightFill = "#2EB8AC">
+
+			</sv-glide>
+
+			<sv-glide 
+				data-background = "url(//chicago.seriouseats.com/images/2012/12/20121226-235041-best-chicago-tacos-2012-bullhead-cantina-sweet-potato-taco.jpg)"
+				data-link ="//www.bullheadcantina.com/"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#2EB8AC"
+				data-rightFill = "#FBB040">
+
+			</sv-glide>
+
+			<sv-glide 
+				data-background = "url(//chicago.seriouseats.com/images/2012/12/20121226-235041-best-chicago-tacos-2012-zacatacos-carne-asada.jpg)"
+				data-link ="//www.zacatacos.net/"
+				data-svgWidth = "200px"
+				data-svgHeight = "200px"
+				data-leftFill = "#D6702B"
+				data-rightFill = "#FBB040">
+
+			</sv-glide>
+		</section>
+
+
+		<section class="section wes">
+			<h1 class="h1">Wes Anderson</h1>
+			<sv-glide
+			data-background = "url(//s3.amazonaws.com/criterion-production/posts/2376-bfeeffd7773625e221f7e0812dc25e0b/Royal_Feature_Current_original.jpg)"
+			data-link = "//www.imdb.com/name/nm0027572/"
+			data-svgWidth ="600px"
+			data-svgHeight ="300px"
+			data-leftFill ="#F2808E"
+			data-rightFill="#82C49D">
+
+				<span class="words">The Royal Tenenbaums</span>
+
+			</sv-glide>
+
+			<sv-glide
+			data-background = "url(//moviesfilmsandflix.files.wordpress.com/2012/03/royal-tenenbaum-gene-hackman.jpg)"
+			data-link = "//www.imdb.com/name/nm0000432/"
+			data-svgWidth ="200px"
+			data-svgHeight ="300px"
+			data-leftFill ="#82C49D"
+			data-rightFill="#F2808E">
+			</sv-glide>
+
+			<sv-glide
+			data-background = "url(//static.squarespace.com/static/51d1cb40e4b0683f2adcd8e9/t/530a697fe4b01ddda83af0f5/1393191298326/tumblr_n0w5rs8yRY1s4pf4ro1_500.gif)"
+			data-link = "//www.imdb.com/title/tt0432283/"
+			data-svgWidth ="500px"
+			data-svgHeight ="300px"
+			data-leftFill ="#B45407"
+			data-rightFill="#A62A08">
+				<span class="words">The Fantastic Mr. Fox</span>
+			</sv-glide>
+
+			<sv-glide
+			data-background = "url(//25.media.tumblr.com/tumblr_mdk9fpx6ui1qzzklwo1_500.gif)"
+			data-svgWidth ="300px"
+			data-svgHeight ="500px"
+			data-leftFill ="#A62A08"
+			data-rightFill="#2A1001">
+		
+			</sv-glide>
+
+			<sv-glide
+			data-background = "url(//www.movieartarena.com/imgs/lifeaquatic.jpg)"
+			data-link = "//www.imdb.com/title/tt0362270/"
+			data-svgWidth ="450px"
+			data-svgHeight ="700px"
+			data-leftFill ="rgba(5, 39,43, 0.75)"
+			data-rightFill="yellow">
+		
+				<span class="words">The Life Aquatic</span>
+		</section>
+
+		
+</main>
+</body>
+</html>

@@ -1,0 +1,159 @@
+
+<template id="tpl">
+	<style type="text/css">
+		.left{
+			-moz-transform: translate(0px, 0px);
+			transform: translate(0px, 0px);
+			-moz-transition-duration: 0.15s;
+			transition-duration: 0.15s;
+		}
+
+		.right{
+			-moz-transform: translate(0px, 0px);
+			transform: translate(0px,0px);
+			-moz-transition-duration: 0.15s;
+			transition-duration: 0.15s;
+		}
+
+		.lAnimate{
+			-moz-transform: translate(-100%, 0px);
+			transform: translate(-100%, 0px);
+			-moz-transition-duration: 0.15s;
+			transition-duration: 0.15s;
+		}
+
+		.rAnimate{
+			-moz-transform: translate(100%, 100%);
+			transform: translate(100%, 100%);				
+			-moz-transition-duration: 0.15s;
+			transition-duration: 0.15s;
+		}
+
+		.wrapper{
+			overflow: scroll;
+		}
+
+		.svgBox{
+			background-size: cover;
+		}
+
+		.text{
+			margin: 0px;
+		}
+
+	</style>
+	<div class="wrapper">
+		<a href="" class="svg-link" target="blank">
+			<svg class="svgBox" width="" height="">
+				<polygon class="left" fill="" points=""/>
+				<polygon class="right" fill="" points=""/>
+			</svg> 
+		</a>
+		<p class="text"><content select=".words"></content></p>
+	</div>
+</template>
+		
+<script>
+(function(){
+	'use strict';
+
+	/****
+	js for template jazz
+	*****/
+
+	//reference svGlide.html
+	var thisFile = document.currentScript.ownerDocument;
+
+	//reference the template inside svGlide.html
+	var tpl = thisFile.querySelector('#tpl');
+
+	//create prototype for svGlide element
+	var svProto = Object.create(HTMLElement.prototype);
+
+	Object.defineProperty(svProto, 'svgWidth', {
+		get: function(){
+			return this.getAttribute('data-svgWidth');
+		},
+		set: function(val){
+			this.setAttribute('data-svgWidth', val);
+		}
+	});
+
+	Object.defineProperty(svProto, 'svgHeight', {
+		get: function(){
+			return this.getAttribute('data-svgHeight');
+		},
+		set: function(val){
+			this.setAttribute('data-svgHeight', val);
+		}
+	});
+
+	svProto.getLink = function(){
+		return this.getAttribute('data-link');
+	}
+
+
+	//createdCallback for svGlide prototype
+	svProto.createdCallback = function(){
+
+		//create shadow root
+		var shadow = this.createShadowRoot();
+		//clone the template
+		var clone = document.importNode(tpl.content, true);
+
+		//update template placeholders with user info
+		clone.querySelector('.svg-link').setAttribute('href', this.getAttribute('data-link'));
+		clone.querySelector('.svgBox').setAttribute('style','background: ' + this.getAttribute('data-background'));
+
+		var svgX = this.getAttribute('data-svgWidth');
+		var svgXLength = svgX.length;
+		var svgY = this.getAttribute('data-svgHeight');
+		var svgYLength = svgY.length;
+
+		var shortX = svgX.slice(0, svgXLength -2);
+		var shortY = svgY.slice(0, svgYLength -2);
+
+		var svgNumX = Number(shortX);
+		var svgNumY = Number(shortY);
+
+		clone.querySelector('.svgBox').setAttribute('width', svgX);
+		clone.querySelector('.svgBox').setAttribute('height', svgY);
+		clone.querySelector('.wrapper').style.width = svgX;
+
+		clone.querySelector('.svgBox').style.backgroundSize = svgX + " " + svgY;
+		clone.querySelector('.left').setAttribute('points', "0,0 0," + shortY + " " + shortX +",0 ");
+		clone.querySelector('.right').setAttribute('points', "0," + shortY + " " + shortX +"," + shortY + " " +  shortX + ",0 ");
+
+		clone.querySelector('.left').setAttribute('fill', this.getAttribute('data-leftFill'));
+		clone.querySelector('.right').setAttribute('fill', this.getAttribute('data-rightFill'));
+
+
+		this.addEventListener('mouseover', function(){
+			this.shadowRoot.querySelector('.left').classList.add('lAnimate');
+			this.shadowRoot.querySelector('.right').classList.add('rAnimate');
+		});
+
+		this.addEventListener('mouseout', function(){
+			this.shadowRoot.querySelector('.left').classList.remove('lAnimate');
+			this.shadowRoot.querySelector('.right').classList.remove('rAnimate');	
+		});
+		
+
+		//add clone to shadow root
+		shadow.appendChild(clone);
+	};
+
+
+	//register the svGlide element
+	document.registerElement('sv-glide', {
+		prototype: svProto
+	});
+
+})();//end of sandbox
+</script>
+
+
+
+
+
+
